@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى أغلى الناس Riry ✨</title>
+    <!-- استدعاء خطوط أنيقة -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <!-- مكتبة الألعاب النارية المتقدمة -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at center, #130722 0%, #08020e 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* خلفية نيون ومؤثرات ضوئية متحركة */
+        .glow-orb {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(255, 0, 128, 0.15), rgba(120, 0, 255, 0.15));
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: 1;
+            animation: floatOrb 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(-150px, -150px) scale(1); }
+            100% { transform: translate(150px, 150px) scale(1.3); }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            padding: 30px;
+            max-width: 700px;
+            width: 90%;
+        }
+
+        /* أنظمة الصفحات */
+        .page {
+            display: none;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 50px 35px;
+            border-radius: 35px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+            animation: pageAppear 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes pageAppear {
+            0% { opacity: 0; transform: scale(0.8) translateY(30px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-weight: 900;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 2.2;
+            color: #e2e2e2;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: #ff6b81;
+            font-weight: 900;
+        }
+
+        /* الأزرار الفخمة */
+        .btn-luxury {
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .btn-luxury:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(231, 76, 60, 0.7);
+        }
+
+        .icon-lg {
+            font-size: 70px;
+            margin-bottom: 20px;
+            animation: bounceIcon 2s infinite ease-in-out;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+        }
+
+        @keyframes bounceIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* مؤشر تقدم الصفحات (Dots) */
+        .steps-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background: #ffd700;
+            width: 25px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-orb"></div>
+
+    <div class="container">
+        
+        <!-- الصفحة الأولى: الترحيب -->
+        <div id="page-1" class="page active">
+            <div class="icon-lg">✨</div>
+            <h1>إلى المميزة جداً في حياتي، Riry...</h1>
+            <p>اليوم يصادف <span class="highlight">30 أكتوبر 2006</span>، اليوم اللي وُلِد فيه شخص غير الكل. جهزت لك رحلة قصيرة تتنقلين عبرها لتعرفي وش كثر تعنين لي..</p>
+            <button class="btn-luxury" onclick="nextPage(2)">ابدأ الرحلة 🚀</button>
+        </div>
+
+        <!-- الصفحة الثانية: الاهتمامات المشتركة -->
+        <div id="page-2" class="page">
+            <div class="icon-lg">🧩</div>
+            <h1>نتشارك الكثير...</h1>
+            <p>أكثر ما يميزنا أننا نتشارك الكثير من الأشياء والكثير من الاهتمامات وكأننا نرى العالم بنفس الطريقة تماماً يا <span class="highlight">Riry</span>.</p>
+            <button class="btn-luxury" onclick="nextPage(3)">التالي ❤️</button>
+        </div>
+
+        <!-- الصفحة الثالثة: رسالة القلب الصادقة -->
+        <div id="page-3" class="page">
+            <div class="icon-lg">🤍</div>
+            <h1>أنتِ الاستثناء الوحيد</h1>
+            <p>أنتِ مميزة بالنسبة لي جداً، وما أبغى أبدًا أفتقدك لأن مافي كائن بالدنيا ممكن يعوضك بالنسبة لي. والأهم من هذا كله: <br><span class="highlight">أنتِ الوحيدة في الكون اللي لما أتكلم معها، قلبي اللي يتكلم مو عقلي.</span></p>
+            <button class="btn-luxury" onclick="nextPage(4)">التالي: المفاجأة 🎁</button>
+        </div>
+
+        <!-- الصفحة الرابعة: صندوق الهدية التفاعلي -->
+        <div id="page-4" class="page">
+            <div class="icon-lg" style="cursor: pointer;" onclick="openGift()">🎁</div>
+            <h1>هدية عيد ميلادك!</h1>
+            <p>اضغطِ على صندوق الهدية في الأعلى أو الزر أدناه لفتح الاحتفال الكبير!</p>
+            <button class="btn-luxury" onclick="openGift()">افتح الهدية الآن ✨</button>
+        </div>
+
+        <!-- الصفحة الخامسة: صفحة الاحتفال الكبرى (النهاية) -->
+        <div id="page-5" class="page">
+            <div class="icon-lg">🎂🎉</div>
+            <h1>كل عام وأنتِ بألف خير يا Riry!</h1>
+            <p>كل سنة وأنتِ النور اللي يضوي أيامي، وعسى عيونك ما تشوف إلا الفرح والضحكة لا تفارق وجهك الجميل. 🥂✨<br><br><span style="font-size: 1rem; color: #ffd700;">من misho بكل حب 🤍</span></p>
+        </div>
+
+        <!-- مؤشر صفحات الموقع -->
+        <div class="steps-indicator" id="indicator">
+            <div class="dot active" id="dot-1"></div>
+            <div class="dot" id="dot-2"></div>
+            <div class="dot" id="dot-3"></div>
+            <div class="dot" id="dot-4"></div>
+            <div class="dot" id="dot-5"></div>
+        </div>
+
+    </div>
+
+    <script>
+        function nextPage(pageNum) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            document.getElementById('page-' + pageNum).classList.add('active');
+
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                if (index + 1 === pageNum) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function openGift() {
+            nextPage(5);
+
+            var duration = 4 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 45, spread: 360, ticks: 90, zIndex: 1000 };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            var interval = setInterval(function() {
+                var timeLeft = animationEnd - Date.now();
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+                var particleCount = 70 * (timeLeft / duration);
+                
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }, colors: ['#ffd700', '#ff6b81', '#ffffff'] }));
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }, colors: ['#ff4757', '#2ed573', '#9b59b6'] }));
+            }, 250);
+        }
+    </script>
+</body>
+</html>
